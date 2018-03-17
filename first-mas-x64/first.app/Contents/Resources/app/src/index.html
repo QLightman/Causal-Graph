@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Causal graph</title>
+</head>
+    <style>
+
+
+.nodes circle {
+  pointer-events: all;
+  fill:	#0000CD;
+}
+text{
+    fill:black;
+    font-weight:bold;
+    text-anchor: middle;
+    dominant-baseline: middle; 
+}
+.tooptip{
+    position:absolute;
+    width:auto;
+    height:auto;
+    text-align:center;
+    font-family:simsun;
+    font-size:20px;
+    border-style:solid;
+    border-width:2px;
+    background-color: white;
+    border-radius:5px;
+    border-color:yellow;
+}
+.button {
+    position:fixed;
+    background-color: steelblue;
+    border: 5px;
+    color: white;
+    padding: 30px 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px 2px;
+    border-radius: .5em;  
+    cursor: pointer;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);  
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);  
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);  
+}
+#help{
+    left:760px;
+    top:430px;
+}
+#reset{
+    left:540px;
+    top:430px;
+}
+#draw{
+    left:320px;
+    top:430px;
+}
+#return{
+    padding: 10px 32px;
+    left:850px;
+    top:0px;
+}
+.input { 
+    position:fixed;
+    left:350px;
+    top:100px;
+    width:500px; 
+    height:80px; 
+    background:#ddd; 
+    border:5px solid steelblue;
+    text-align: center;
+    font-size: 30px;
+    margin: 4px 2px;
+    border-radius: .5em; 
+}
+
+#threshold{
+    left:350px;
+    top:230px;
+}
+.axis text{
+    font-family:sans-serif;
+    font-size:25px;
+}
+</style>
+<body>
+    <form>
+    <label for="path">
+        <input  class="input" placeholder="path of the file"  id="path" name="path"/>
+        <br>
+        <input class="input" placeholder="threshold:t" id="threshold" name="path"/>
+        <div>
+        <button id="reset" class="button" type="reset">Reset</button>
+        </div>
+    </label>
+    </form>
+    <button   id="help" class="button">help</button>
+    <button  onclick=" show_drawing()" id="draw" class="button">draw</button>
+    <button  onclick=" show_content()" id="return" style="display:none" class="button">return</button>
+
+    
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="causal_plot.js"></script>
+
+</body>
+</html>
+
